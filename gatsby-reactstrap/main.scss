@@ -1,0 +1,66 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+//nav bar
+.nav-item{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.nav-item:before{
+    content: none !important;
+}
+a {
+    color: black;
+    text-decoration: none !important;
+}
+.nav-item:visited{
+    color:#9B9B9B
+}
+.nav-item:hover{
+    background-color: yellow;
+    color: black !important;
+}
+
+//carousel 
+.blackBar{
+    height: 12px;
+    background-color: black;
+}
+
+//gradientbar
+.gradBar{
+    height: 12px;
+    background-image: linear-gradient(darkgrey, white);
+}
+
+//index page
+.btn-primary{
+    background-color: black;
+    border-color: black;
+}
+.btn-primary:hover{
+    background-color: gray;
+    border-color: gray;
+}
+
+.linkedin:hover {
+    content: src('../images/social/SM_icon_linkedin_roll.svg');
+}
+
+//Product info
+ul {
+  list-style: none;
+}
+
+ul li:before {
+  content: '✓';
+}
+
+.backbtn{
+    color: #4A90E2
+}
+
+//Modal
+.modal-content{
+    width: 700px !important;
+}

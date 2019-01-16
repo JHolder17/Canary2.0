@@ -9,11 +9,7 @@ import {
   NavItem,
  } from 'reactstrap';
 
- const NavItemStyle = {
-   paddingLeft: '2rem'
- }
-
-export default class ReactNavBat extends React.Component {
+export default class ReactNavBar extends React.Component {
   constructor(props) {
     super(props);
 
@@ -32,22 +28,25 @@ export default class ReactNavBat extends React.Component {
       <div>
         <Navbar color="white" light expand="md">
           <NavbarBrand> 
-            <img src={require("../../public/images/CanaryLogo.png")} width="234" height="125" alt=""></img>
+            <img src={require("../images/CanaryLogo.png")} width="200" height="62" alt=""></img>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem style={NavItemStyle}>
-                <Link to="/">What We Do</Link>
+              <NavItem >
+                <Link to="/">HOME</Link>
               </NavItem>
-              <NavItem style={NavItemStyle}>
-              <Link to="/page-2/">Who We Are</Link>
+              <NavItem >
+              <Link to="/ProductInfo/">PRODUCT INFO</Link>
               </NavItem>
-              <NavItem style={NavItemStyle}>
-              <Link to="/page-2/">Industry Insights</Link>
+              <NavItem >
+              <Link to="/Videos/">VIDEOS</Link>
               </NavItem>
-              <NavItem style={NavItemStyle}>
-                <a href="https://canarycompliance.com/login">Sign In</a>
+              <NavItem >
+                <Link to="/Articles/">ARTICLES</Link>
+              </NavItem>
+              <NavItem >
+                <a href="https://canarycompliance.com/login">SIGN IN</a>
               </NavItem>
             </Nav>
           </Collapse>

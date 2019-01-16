@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from "gatsby"
+
 import {
+  // Button,
   Carousel,
   CarouselItem,
   CarouselControl,
@@ -9,19 +12,19 @@ import {
 
 const items = [
   {
-    src: require("../../public/images/CAR1.jpg"),
-    altText: 'Slide 1',
-    caption: 'Slide 1'
+    src: require("../images/grey.png"),
+    captionHeader: 'Canary case study one',
+    captionText: 'subtext 1',
   },
   {
-    src: require("../../public/images/CAR2.jpg"),
-    altText: 'Slide 2',
-    caption: 'Slide 2'
+    src: require("../images/grey.png"),
+    captionHeader: 'Canary case study two',
+    captionText: 'subtext 2'
   },
   {
-    src: require("../../public/images/CAR3.jpg"),
-    altText: 'Slide 3',
-    caption: 'Slide 3'
+    src: require("../images/grey.png"),
+    captionHeader: 'Canary case study three',
+    captionText: 'subtext 3'
   }
 ];
 
@@ -71,28 +74,31 @@ class ReactCarousel extends Component {
 
     const slides = items.map((item) => {
       return (
-        <CarouselItem style={CarouselItemStyle}
+        <CarouselItem
           onExiting={this.onExiting}
           onExited={this.onExited}
           key={item.src}
         >
           <img src={item.src} alt={item.altText} style={CarouselImgStyle} />
-          <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+          <CarouselCaption captionHeader={item.captionHeader} captionText={item.captionText} ></CarouselCaption>
         </CarouselItem>
       );
     });
 
     return (
-      <Carousel
-        activeIndex={activeIndex}
-        next={this.next}
-        previous={this.previous}
-      >
-        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
-        {slides}
-        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
-      </Carousel>
+      <div>
+        <div className="blackBar"></div>
+        <Carousel
+          activeIndex={activeIndex}
+          next={this.next}
+          previous={this.previous}
+        >
+          <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+          {slides}
+          <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+          <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+        </Carousel>
+      </div>
     );
   }
 }
